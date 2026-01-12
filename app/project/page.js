@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Agatone from "@/public/Agatone-logo.jpg";
 
 /* Animation variants (same system used everywhere) */
 const slideLeft = {
@@ -24,9 +25,9 @@ const projects = [
     title: "Agatone Poultry Farm",
     description:
       "A modern poultry farm platform featuring product categories, cart system, and smooth UI interactions built for performance and scalability.",
-    image: "/projects/poultry.png",
+    image: Agatone,
     tech: ["React", "Tailwind", "Context API"],
-    link: "#",
+    link: "https://agatonefarms.com/",
   },
   {
     title: "E-Commerce Store",
@@ -50,7 +51,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative py-28 bg-white dark:bg-slate-900 overflow-hidden"
+      className="relative py-20 bg-white dark:bg-slate-900 overflow-hidden"
     >
       {/* subtle background glow */}
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-blue-50/40 to-transparent dark:from-slate-800/40" />
@@ -102,8 +103,9 @@ export default function Projects() {
                 group rounded-2xl overflow-hidden
                 bg-white dark:bg-slate-800
                 border border-slate-200 dark:border-slate-700
-                shadow-sm hover:shadow-xl
-                transition-all hover:-translate-y-1
+                shadow-sm transition-all duration-300 ease-out
+               hover:shadow-[0_0_20px_rgba(148,163,184,0.8)]
+               hover:scale-105
               "
             >
               {/* Image */}
@@ -191,7 +193,8 @@ export default function Projects() {
               inline-block px-8 py-4 rounded-full
               bg-linear-to-r from-blue-600 to-purple-600
               text-white font-semibold shadow-lg
-              hover:scale-105 transition
+              hover:scale-105 transition-all duration-300 ease-out
+                hover:shadow-[0_0_25px_rgba(139,92,246,0.8)]
             "
           >
             Start a Project

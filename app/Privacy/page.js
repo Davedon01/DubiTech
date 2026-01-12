@@ -102,7 +102,8 @@ export default function Privacy() {
         </p>
         <a
           href="#contact"
-          className="inline-block px-8 py-4 rounded-full bg-linear-to-r from-purple-600 to-blue-600 text-white font-semibold shadow-lg hover:scale-105 transition"
+          className="inline-block px-8 py-4 rounded-full bg-linear-to-r from-purple-600 to-blue-600 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300 ease-out
+                hover:shadow-[0_0_25px_rgba(139,92,246,0.8)]"
         >
           Contact Us
         </a>

@@ -1,158 +1,189 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import SkillCard from "@/Components/SkillCard";
+import SkillModal from "@/Components/SkillModal";
 
-/* Reusable animation variants */
-const slideLeft = {
-  hidden: { opacity: 0, x: -80 },
-  visible: { opacity: 1, x: 0 },
-};
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaGitAlt,
+  FaSearch,
+  FaBullhorn,
+  FaPalette,
+} from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
 
-const slideRight = {
-  hidden: { opacity: 0, x: 80 },
-  visible: { opacity: 1, x: 0 },
-};
-
+/* Animations */
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0 },
 };
 
 export default function About() {
+  const [activeSkill, setActiveSkill] = useState(null);
+
   const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "Git & GitHub",
-    "UI/UX Design",
-    "Digital Marketing",
-    "SEO Optimization",
+    {
+      name: "HTML",
+      icon: FaHtml5,
+      color: "text-orange-500",
+      barColor: "bg-orange-500",
+      description:
+        "Semantic, accessible, and SEO friendly HTML markup that forms a solid foundation for modern web applications.",
+      level: 95,
+    },
+    {
+      name: "CSS",
+      icon: FaCss3Alt,
+      color: "text-blue-500",
+      barColor: "bg-blue-500",
+      description:
+        "Responsive layouts, modern CSS techniques, animations, and pixel perfect UI styling.",
+      level: 92,
+    },
+    {
+      name: "JavaScript",
+      icon: FaJs,
+      color: "text-yellow-400",
+      barColor: "bg-yellow-400",
+      description:
+        "ES6+, async logic, DOM manipulation, performance focused and maintainable code.",
+      level: 90,
+    },
+    {
+      name: "React",
+      icon: FaReact,
+      color: "text-cyan-400",
+      barColor: "bg-cyan-400",
+      description:
+        "Component-driven architecture, hooks, reusable UI patterns, and scalable apps.",
+      level: 88,
+    },
+    {
+      name: "Next.js",
+      icon: SiNextdotjs,
+      color: "text-slate-800 dark:text-white",
+      barColor: "bg-slate-800 dark:bg-white",
+      description:
+        "Server-side rendering, SEO optimization, App Router, and production ready setups.",
+      level: 85,
+    },
+    {
+      name: "Tailwind CSS",
+      icon: SiTailwindcss,
+      color: "text-sky-400",
+      barColor: "bg-sky-400",
+      description:
+        "Utility-first CSS for fast, consistent, and scalable UI development.",
+      level: 92,
+    },
+    {
+      name: "Git & GitHub",
+      icon: FaGitAlt,
+      color: "text-red-500",
+      barColor: "bg-red-500",
+      description:
+        "Version control, branching strategies, collaboration, and clean commit history.",
+      level: 85,
+    },
+    {
+      name: "UI / UX Design",
+      icon: FaPalette,
+      color: "text-purple-500",
+      barColor: "bg-purple-500",
+      description:
+        "User-centered design, wireframing, accessibility, and intuitive experiences.",
+      level: 80,
+    },
+    {
+      name: "Digital Marketing",
+      icon: FaBullhorn,
+      color: "text-pink-500",
+      barColor: "bg-pink-500",
+      description:
+        "Brand visibility, conversion-focused strategies, and audience engagement.",
+      level: 82,
+    },
+    {
+      name: "SEO Optimization",
+      icon: FaSearch,
+      color: "text-green-500",
+      barColor: "bg-green-500",
+      description:
+        "Search ranking, performance tuning, and technical SEO best practices.",
+      level: 82,
+    },
   ];
 
   return (
-    <section
-      id="about"
-      className="relative py-28 bg-white dark:bg-slate-900 overflow-hidden"
-    >
-      {/* Background Accent */}
-      <div className="absolute inset-0 -z-10 bg-linear-to-b from-blue-50/40 to-transparent dark:from-blue-950/30" />
+    <>
+      {/* MAIN CONTENT */}
+      <section
+        id="about"
+        className={`relative py-20 bg-white dark:bg-slate-900 transition ${
+          activeSkill ? "blur-sm pointer-events-none select-none" : ""
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-2 gap-14 items-center">
+          {/* ABOUT HEADER */}
+          <div className="grid md:grid-cols-2 gap-14 items-center mb-24">
+            <Image
+              src="/Avatar-DubiTech.webp"
+              alt="DubiTech Founder"
+              width={320}
+              height={320}
+              priority
+              className="rounded-3xl shadow-2xl mx-auto"
+            />
 
-          {/* IMAGE — slides in from LEFT */}
-          <motion.div
-            variants={slideLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="flex justify-center"
-          >
-            <div className="relative">
-              <Image
-                src="/Avatar-DubiTech.webp" // replace with brand image
-                alt="DubiTech Founder"
-                width={320}
-                height={320}
-                className="rounded-3xl shadow-2xl"
-              />
-
-              <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-xl
-                bg-blue-600 text-white text-sm font-semibold shadow-lg"
-              >
-                DubiTech
-              </div>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+                Building Digital Experiences That Drive Results
+              </h2>
+              <p className="text-lg text-slate-600 dark:text-slate-300">
+                DubiTech blends frontend engineering, UI/UX design,
+                and digital strategy to help brands grow online.
+              </p>
             </div>
-          </motion.div>
+          </div>
 
-          {/* TEXT — slides in from RIGHT */}
+          {/* SKILLS */}
           <motion.div
-            variants={slideRight}
+            variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="space-y-6"
+            viewport={{ once: true }}
           >
-            <span
-              className="inline-block px-4 py-1 rounded-full text-sm font-semibold
-              bg-blue-100 text-blue-700
-              dark:bg-blue-900/40 dark:text-blue-300"
-            >
-              About DubiTech
-            </span>
+            <h3 className="text-3xl font-bold text-center text-slate-900 dark:text-white mb-10">
+              Core Skills & Expertise
+            </h3>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
-              Building Digital Experiences <br className="hidden sm:block" />
-              That Drive Real Results
-            </h2>
-
-            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              <strong>DubiTech</strong> is a modern digital brand focused on crafting
-              high-performance web experiences and strategic digital solutions.
-            </p>
-
-            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              We blend <strong>frontend engineering</strong>, clean UI/UX,
-              and <strong>digital marketing strategy</strong> to help brands grow,
-              convert users, and scale online.
-            </p>
-
-            {/* CTA */}
-            <div className="flex flex-wrap gap-4 pt-4">
-              <a
-                href="#projects"
-                className="px-7 py-3 rounded-full bg-linear-to-r from-blue-600 to-purple-600
-                text-white font-semibold shadow-lg hover:scale-105 transition"
-              >
-                View Projects
-              </a>
-
-              <a
-                href="#contact"
-                className="px-7 py-3 rounded-full border border-slate-300 dark:border-slate-700
-                text-slate-800 dark:text-slate-200 font-semibold
-                hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-              >
-                Work With Us
-              </a>
+            <div className="max-w-5xl mx-auto rounded-3xl p-6 bg-white dark:bg-slate-800 shadow-xl">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+                {skills.map((skill) => (
+                  <SkillCard
+                    key={skill.name}
+                    {...skill}
+                    onLearnMore={() => setActiveSkill(skill)}
+                  />
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
+      </section>
 
-        {/* SKILLS — fade + rise */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mt-24"
-        >
-          <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
-            Core Skills & Expertise
-          </h3>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {skills.map((skill) => (
-              <div
-                key={skill}
-                className="px-4 py-3 rounded-xl text-center font-medium
-                bg-white dark:bg-slate-800
-                text-slate-700 dark:text-slate-200
-                shadow-sm hover:shadow-md hover:-translate-y-1 transition"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-    </section>
+      {/* MODAL */}
+      <SkillModal
+        skill={activeSkill}
+        onClose={() => setActiveSkill(null)}
+      />
+    </>
   );
 }

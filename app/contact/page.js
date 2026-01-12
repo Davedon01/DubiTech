@@ -56,7 +56,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-28 bg-white dark:bg-slate-900 overflow-hidden"
+      className="relative py-20 bg-white dark:bg-slate-900 overflow-hidden"
     >
       {/* Background glow */}
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-blue-50/40 to-transparent dark:from-slate-800/40" />
@@ -197,7 +197,8 @@ export default function Contact() {
               disabled={loading}
               whileHover={{ scale: loading ? 1 : 1.04 }}
               whileTap={{ scale: loading ? 1 : 0.96 }}
-              className={`w-full px-6 py-4 rounded-xl font-semibold text-white transition ${
+              className={`w-full px-6 py-4 rounded-xl font-semibold text-white transition-all duration-300 ease-out
+                hover:shadow-[0_0_25px_rgba(139,92,246,0.8)] ${
                 loading
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-linear-to-r from-blue-600 to-purple-600 hover:brightness-110"

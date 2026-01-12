@@ -95,7 +95,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-slate-900 dark:text-white mb-4">Get in Touch</h4>
             <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
-              <li>Email: <span className="ml-2 text-slate-900 dark:text-slate-200">hello@dubitech.dev</span></li>
+              <li>Email: <span className="ml-2 text-slate-900 dark:text-slate-200">dubitech0@gmail.com</span></li>
               <li>Location: <span className="ml-2 text-slate-900 dark:text-slate-200">Nigeria</span></li>
             </ul>
 

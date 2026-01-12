@@ -34,7 +34,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative py-28 bg-white dark:bg-slate-900 overflow-hidden"
+      className="relative py-20 bg-white dark:bg-slate-900 overflow-hidden"
     >
       {/* subtle background glow */}
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-purple-50/40 to-transparent dark:from-slate-800/40" />
@@ -120,7 +120,8 @@ export default function Testimonials() {
               inline-block px-8 py-4 rounded-full
               bg-linear-to-r from-purple-600 to-blue-600
               text-white font-semibold shadow-lg
-              hover:scale-105 transition
+              hover:scale-105 transition-all duration-300 ease-out
+                hover:shadow-[0_0_25px_rgba(139,92,246,0.8)]
             "
           >
             Get Started

@@ -30,7 +30,7 @@ export default function Services() {
       icon: Code2,
       title: "Frontend Development",
       description:
-        "High-performance, responsive web applications built with React, Next.js, and Tailwind CSS — optimized for speed, scalability, and user experience.",
+        "High-performance, responsive web applications built with React, Next.js, and Tailwind CSS optimized for speed, scalability, and user experience.",
     },
     {
       icon: Layout,
@@ -55,7 +55,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-28 bg-white dark:bg-slate-900 overflow-hidden"
+      className="relative py-20 bg-white dark:bg-slate-900 overflow-hidden"
     >
       {/* Background glow */}
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-purple-50/40 to-transparent dark:from-purple-950/30" />
@@ -87,7 +87,7 @@ export default function Services() {
           <p className="mt-6 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
             DubiTech delivers modern digital solutions that combine
             <strong> design</strong>, <strong>technology</strong>, and
-            <strong> strategy</strong> — built to convert users into customers.
+            <strong> strategy</strong> built to convert users into customers.
           </p>
         </motion.div>
 
@@ -109,7 +109,9 @@ export default function Services() {
                 className="group p-8 rounded-2xl
                 bg-white dark:bg-slate-800
                 border border-slate-200 dark:border-slate-700
-                shadow-sm hover:shadow-xl hover:-translate-y-1 transition"
+                shadow-sm transition-all duration-300 ease-out
+               hover:shadow-[0_0_20px_rgba(148,163,184,0.8)]
+               hover:scale-105"
               >
                 <div
                   className="flex items-center justify-center w-14 h-14 rounded-xl
@@ -152,8 +154,9 @@ export default function Services() {
             href="#contact"
             className="inline-block px-8 py-4 rounded-full
             bg-linear-to-r from-blue-600 to-purple-600
-            text-white font-semibold shadow-lg
-            hover:scale-105 transition"
+            text-white font-semibold shadow-lg transition-all duration-300 ease-out
+                hover:shadow-[0_0_25px_rgba(139,92,246,0.8)]
+                hover:scale-105"
           >
             Get Started
           </a>
