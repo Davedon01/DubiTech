@@ -129,7 +129,7 @@ export default function Contact() {
                 name="name"
                 required
                 placeholder="John Doe"
-                className="mt-1 w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-900 border border-black/10 dark:border-white/10 focus:ring-2 focus:ring-blue-500/50"
+                className="mt-1 w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-black/10 dark:border-white/10 focus:ring-2 focus:ring-blue-500/50"
               />
             </div>
 
@@ -146,7 +146,7 @@ export default function Contact() {
                   name="email"
                   required
                   placeholder="john@email.com"
-                  className="mt-1 w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-900 border border-black/10 dark:border-white/10 focus:ring-2 focus:ring-purple-500/50"
+                  className="mt-1 w-full px-4 py-3 rounded-xl bg-white/80 text-slate-700 dark:text-slate-300 dark:bg-slate-900 border border-black/10 dark:border-white/10 focus:ring-2 focus:ring-purple-500/50"
                 />
               </div>
 
@@ -158,7 +158,7 @@ export default function Contact() {
                 <div className="mt-1 flex gap-2">
                   <select
                     name="country_code"
-                    className="px-3 py-3 rounded-xl bg-white/80 dark:bg-slate-900 border border-black/10 dark:border-white/10 text-sm focus:ring-2 focus:ring-blue-500/50"
+                    className="px-3 py-3 rounded-xl bg-white/80 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-black/10 dark:border-white/10 text-sm focus:ring-2 focus:ring-blue-500/50"
                   >
                     <option value="+234">🇳🇬 +234</option>
                     <option value="+1">🇺🇸 +1</option>
@@ -171,7 +171,7 @@ export default function Contact() {
                     type="tel"
                     name="phone"
                     placeholder="801 234 5678"
-                    className="flex-1 px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-900 border border-black/10 dark:border-white/10 focus:ring-2 focus:ring-blue-500/50"
+                    className="flex-1 px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-black/10 dark:border-white/10 focus:ring-2 focus:ring-blue-500/50"
                   />
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default function Contact() {
                 required
                 rows={5}
                 placeholder="Tell me about your project..."
-                className="mt-1 w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-900 border border-black/10 dark:border-white/10 resize-none focus:ring-2 focus:ring-blue-500/50"
+                className="mt-1 w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-black/10 dark:border-white/10 resize-none focus:ring-2 focus:ring-blue-500/50"
               />
             </div>
 

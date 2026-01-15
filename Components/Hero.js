@@ -97,7 +97,7 @@ export default function Hero() {
           </p>
 
           {/* CTA */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:justify-start justify-center">
+          <div className="mt-8 flex flex-col sm:flex-row md:justify-start gap-4 justify-center">
             <a
               href="#projects"
               className="

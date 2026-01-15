@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
 import { usePathname, useRouter } from "next/navigation";
+import ThemeSwitch from "../context/ThemeSwitch";
 
 export default function Header({ scrollToSection, refs }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -105,7 +106,7 @@ export default function Header({ scrollToSection, refs }) {
 
           {/* DESKTOP ACTIONS */}
           <div className="hidden md:flex items-center gap-3">
-            <button
+            {/* <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
               className="px-3 py-2 rounded-full
@@ -113,7 +114,7 @@ export default function Header({ scrollToSection, refs }) {
                 text-sm font-medium transition"
             >
               {theme === "light" ? "🌙" : "☀️"}
-            </button>
+            </button> */}
 
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -132,19 +133,21 @@ export default function Header({ scrollToSection, refs }) {
           </div>
 
           {/* MOBILE ACTIONS */}
-          <div className="md:hidden flex items-center gap-2">
-            <button
+          <div className="flex items-center gap-2">
+            <ThemeSwitch />
+            {/* <button
               onClick={toggleTheme}
               className="px-3 py-2 rounded-full
-                bg-gray-200 dark:bg-gray-700
-                text-sm font-medium"
-            >
+              bg-gray-200 dark:bg-gray-700
+              text-sm font-medium"
+              >
               {theme === "light" ? "🌙" : "☀️"}
-            </button>
+            </button> */}
+            
 
             <button
               onClick={() => setIsMenuOpen(true)}
-              className="px-4 py-2 rounded-xl
+              className="px-4 py-2 md:hidden rounded-xl
                 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl
                 border border-black/10 dark:border-white/10
                 text-xl text-slate-800 dark:text-slate-200"
@@ -183,14 +186,14 @@ export default function Header({ scrollToSection, refs }) {
                 </span>
               </div>
 
-              <div className="flex justify-center mb-4">
+              {/* <div className="flex justify-center mb-4">
                 <button
                   onClick={toggleTheme}
                   className="px-3 py-2 rounded-full bg-gray-200 dark:bg-gray-700"
                 >
                   {theme === "light" ? "🌙" : "☀️"}
                 </button>
-              </div>
+              </div> */}
 
               <nav className="flex flex-col gap-6 px-6 text-slate-800 dark:text-slate-200">
                 {navLinks.map((link) => (

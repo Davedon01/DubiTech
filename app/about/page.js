@@ -164,7 +164,7 @@ export default function About() {
               Core Skills & Expertise
             </h3>
 
-            <div className="max-w-5xl mx-auto rounded-3xl p-6 bg-white dark:bg-slate-800 shadow-xl">
+            <div className="max-w-5xl mx-auto rounded-3xl p-6 bg-white dark:bg-slate-800 shadow-">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
                 {skills.map((skill) => (
                   <SkillCard
